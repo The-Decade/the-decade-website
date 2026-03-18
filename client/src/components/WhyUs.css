@@ -1,0 +1,56 @@
+.whyus {
+  background: var(--color-bg-secondary);
+}
+
+.whyus__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.whyus__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.whyus__card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  transition: var(--transition);
+}
+
+.whyus__card:hover {
+  border-color: var(--color-border-purple);
+}
+
+.whyus__number {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-purple-light);
+  opacity: 0.5;
+  margin-bottom: 8px;
+}
+
+.whyus__card-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.whyus__card-desc {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .whyus__inner { grid-template-columns: 1fr; gap: 48px; }
+}
+
+@media (max-width: 500px) {
+  .whyus__grid { grid-template-columns: 1fr; }
+}

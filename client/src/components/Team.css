@@ -1,0 +1,36 @@
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.team__card {
+  text-align: center;
+  padding: 36px 24px;
+}
+
+.team__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--color-purple-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.team__name {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.team__role {
+  font-size: 13px;
+  color: var(--color-purple-light);
+  font-weight: 500;
+}
