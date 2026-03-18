@@ -1,0 +1,9 @@
+{
+  "name": "the-decade-website",
+  "private": true,
+  "scripts": {
+    "client": "cd client && npm run dev",
+    "server": "cd server && npx nodemon index.js",
+    "dev": "npm run client & npm run server"
+  }
+}
