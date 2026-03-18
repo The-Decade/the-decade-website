@@ -46,7 +46,7 @@ function Navbar() {
         <ul className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
           {navLinks.map(link => (
             <li key={link.label}>
-              
+              <a
                 href={`#${link.href}`}
                 className={activeSection === link.href ? 'active' : ''}
                 onClick={() => setMenuOpen(false)}
