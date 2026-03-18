@@ -39,9 +39,7 @@ function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
-        <a href="#" className="navbar__logo">
-          THE <span className="gradient-text">DECADE</span>
-        </a>
+        <img src="/logo.jpeg" alt="The Decade logo" className="navbar__logo" />
 
         <ul className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
           {navLinks.map(link => (

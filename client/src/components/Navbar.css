@@ -22,9 +22,11 @@
 }
 
 .navbar__logo {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  width: clamp(110px, 14vw, 170px);
+  height: auto;
+  max-height: 56px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .navbar__links {
@@ -68,6 +70,11 @@
 }
 
 @media (max-width: 768px) {
+  .navbar__logo {
+    width: 120px;
+    max-height: 44px;
+  }
+
   .navbar__burger { display: flex; }
 
   .navbar__links {

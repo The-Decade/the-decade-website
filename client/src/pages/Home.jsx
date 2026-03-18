@@ -1,14 +1,24 @@
+import Navbar from '../components/Navbar'
+import Hero from '../components/Hero'
+import Services from '../components/Services'
+import WhyUs from '../components/WhyUs'
+import Portfolio from '../components/Portfolio'
+import Team from '../components/Team'
+import Contact from '../components/Contact'
+import Footer from '../components/Footer'
+
 function Home() {
   return (
-    <div style={{ padding: '40px', textAlign: 'center' }}>
-      <h1 className="section-title">
-        Where Creativity <span className="gradient-text">Meets Innovation</span>
-      </h1>
-      <div className="accent-bar" />
-      <p className="section-subtitle" style={{ margin: '0 auto' }}>
-        Design system is live. Ready to build.
-      </p>
-    </div>
+    <>
+      <Navbar />
+      <Hero />
+      <Services />
+      <WhyUs />
+      <Portfolio />
+      <Team />
+      <Contact />
+      <Footer />
+    </>
   )
 }
 
