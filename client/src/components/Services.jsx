@@ -1,3 +1,4 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import './Services.css'
 
 const services = [
@@ -28,16 +29,27 @@ const services = [
 ]
 
 function Services() {
+  const heading = useScrollAnimation()
+  const grid = useScrollAnimation()
+
   return (
     <section className="section" id="services">
       <div className="container">
-        <p className="section-label" style={{ textAlign: 'center' }}>What We Offer</p>
-        <h2 className="section-title" style={{ textAlign: 'center' }}>Our Services</h2>
-        <div className="accent-bar" />
+        <div ref={heading.ref}>
+          <p className={`section-label fade-up ${heading.visible ? 'visible' : ''}`}
+            style={{ textAlign: 'center' }}>What We Offer</p>
+          <h2 className={`section-title fade-up delay-1 ${heading.visible ? 'visible' : ''}`}
+            style={{ textAlign: 'center' }}>Our Services</h2>
+          <div className={`accent-bar fade-up delay-2 ${heading.visible ? 'visible' : ''}`} />
+        </div>
 
-        <div className="services__grid">
+        <div className="services__grid" ref={grid.ref}>
           {services.map((s, i) => (
-            <div className="card services__card" key={i}>
+            <div
+              className={`card services__card fade-up ${grid.visible ? 'visible' : ''}`}
+              style={{ transitionDelay: `${i * 0.1}s` }}
+              key={i}
+            >
               <div className="services__icon">{s.icon}</div>
               <h3 className="services__card-title">{s.title}</h3>
               <p className="services__card-desc">{s.desc}</p>

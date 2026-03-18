@@ -85,3 +85,17 @@
 
   .navbar__links--open { display: flex; }
 }
+
+.navbar__links a.active {
+  color: var(--color-purple-light);
+}
+
+.navbar__burger span.open:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar__burger span.open:nth-child(2) {
+  opacity: 0;
+}
+.navbar__burger span.open:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}

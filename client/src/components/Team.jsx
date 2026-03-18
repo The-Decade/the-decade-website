@@ -1,10 +1,10 @@
 import './Team.css'
 
 const team = [
-  { name: 'Team Member', role: 'Creative Director', initials: 'TD' },
-  { name: 'Team Member', role: 'Digital Marketer', initials: 'TD' },
-  { name: 'Team Member', role: 'Web Developer', initials: 'TD' },
-  { name: 'Team Member', role: 'Brand Strategist', initials: 'TD' },
+  { name: 'The Developer', role: 'Web Developer', initials: 'WD' },
+  { name: 'The Marketer', role: 'Digital Marketer', initials: 'DM' },
+  { name: 'The Designer', role: 'Creative Designer', initials: 'CD' },
+  { name: 'The Manager', role: 'Brand & Strategy Manager', initials: 'BM' },
 ]
 
 function Team() {

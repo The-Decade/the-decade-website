@@ -1,21 +1,37 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import './Navbar.css'
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Team', href: '#team' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: 'about' },
+  { label: 'Services', href: 'services' },
+  { label: 'Portfolio', href: 'portfolio' },
+  { label: 'Team', href: 'team' },
+  { label: 'Contact', href: 'contact' },
 ]
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40)
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40)
+
+      const sections = navLinks.map(l => document.getElementById(l.href))
+      const scrollPos = window.scrollY + 100
+
+      sections.forEach(section => {
+        if (!section) return
+        if (
+          section.offsetTop <= scrollPos &&
+          section.offsetTop + section.offsetHeight > scrollPos
+        ) {
+          setActiveSection(section.id)
+        }
+      })
+    }
+
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -30,7 +46,11 @@ function Navbar() {
         <ul className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
           {navLinks.map(link => (
             <li key={link.label}>
-              <a href={link.href} onClick={() => setMenuOpen(false)}>
+              
+                href={`#${link.href}`}
+                className={activeSection === link.href ? 'active' : ''}
+                onClick={() => setMenuOpen(false)}
+              >
                 {link.label}
               </a>
             </li>

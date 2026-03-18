@@ -1,5 +1,6 @@
 /* ── Google Fonts ── */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import './components/animations.css';
 
 /* ── CSS Variables ── */
 :root {
@@ -184,4 +185,9 @@ button {
   height: 1px;
   background: var(--color-border);
   margin: 0;
+}
+
+/* Offset anchor scroll for fixed navbar */
+section[id] {
+  scroll-margin-top: 80px;
 }
