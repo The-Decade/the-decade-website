@@ -31,7 +31,15 @@ const projects = [
   },
 ]
 
-const clients = ['Kirkman Hybrid Centre', 'Juphimo Consultancy', 'Mila Land Rover']
+const clients = [
+  { name: 'Kirkman Hybrid Centre', logo: '/images/kirkmanhybridcentre.jpeg' },
+  {
+    name: 'Juphimo Consultancy',
+    logo: '/images/juphimo.jpeg',
+    url: 'https://www.juphimorecruitment.co.zw/',
+  },
+  { name: 'Mila Land Rover', logo: '/images/mila.jpeg' },
+]
 
 function Portfolio() {
   const heading = useScrollAnimation()
@@ -79,20 +87,44 @@ function Portfolio() {
         </div>
 
         <div className={`portfolio__clients fade-up ${clientsAnim.visible ? 'visible' : ''}`}
-          ref={clientsAnim.ref}>
-          <p className="portfolio__clients-label" style={{ color: '#888888' }}>
-            Brands We've Worked With
-          </p>
-          <div className="portfolio__clients-list">
-            {clients.map((c, i) => (
-              <div
-                className={`portfolio__client-chip fade-up ${clientsAnim.visible ? 'visible' : ''}`}
-                style={{ transitionDelay: `${i * 0.1}s` }}
-                key={c}
-              >{c}</div>
-            ))}
-          </div>
+  ref={clientsAnim.ref}>
+  <p className="portfolio__clients-label" style={{ color: '#888888' }}>
+    Brands We've Worked With
+  </p>
+  <div className="portfolio__clients-list">
+    {clients.map((c, i) => {
+      const chipClass = `portfolio__client-chip fade-up ${clientsAnim.visible ? 'visible' : ''}`
+      const chipStyle = { transitionDelay: `${i * 0.1}s` }
+
+      if (c.url) {
+        return (
+          <a
+            className={chipClass}
+            style={chipStyle}
+            key={c.name}
+            href={c.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`Visit ${c.name}`}
+            aria-label={`Visit ${c.name} website`}
+          >
+            <img src={c.logo} alt={c.name} />
+          </a>
+        )
+      }
+
+      return (
+        <div
+          className={chipClass}
+          style={chipStyle}
+          key={c.name}
+        >
+          <img src={c.logo} alt={c.name} />
         </div>
+      )
+    })}
+  </div>
+</div>
       </div>
     </section>
   )
