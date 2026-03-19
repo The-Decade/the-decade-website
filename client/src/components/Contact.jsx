@@ -49,7 +49,7 @@ function Contact() {
   }
 
   return (
-    <section className="section" id="contact">
+    <section className="section contact-section" id="contact">
       <div className="container">
         <p className="section-label" style={{ textAlign: 'center' }}>Get In Touch</p>
         <h2 className="section-title" style={{ textAlign: 'center' }}>Contact Us</h2>
