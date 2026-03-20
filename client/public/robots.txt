@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thedecade.com/sitemap.xml
+Sitemap: https://the-decade.co.zw/sitemap.xml
