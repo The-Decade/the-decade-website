@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
 
     // Email to the company
     await transporter.sendMail({
-      from: `"The Decade Website" <${process.env.SMTP_USER}>`,
+      from: `"The Decade Website" <${process.env.SMTP_FROM}>`,
       to: process.env.SMTP_TO,
       replyTo: email,
       subject: `New Enquiry: ${service} — from ${name}`,
@@ -44,7 +44,7 @@ router.post('/', async (req, res) => {
 
     // Auto-reply to the client
     await transporter.sendMail({
-      from: `"The Decade" <${process.env.SMTP_USER}>`,
+      from: `"The Decade" <${process.env.SMTP_FROM}>`,
       to: email,
       subject: `Thanks for reaching out, ${name}!`,
       html: `
