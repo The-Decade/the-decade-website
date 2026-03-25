@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const nodemailer = require('nodemailer')
+const { Resend } = require('resend')
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 router.post('/', async (req, res) => {
   const { name, email, service, message } = req.body
@@ -10,20 +12,9 @@ router.post('/', async (req, res) => {
   }
 
   try {
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT),
-      secure: process.env.SMTP_SECURE === 'true',
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    })
-
-    // Email to the company
-    await transporter.sendMail({
-      from: `"The Decade Website" <${process.env.SMTP_FROM}>`,
-      to: process.env.SMTP_TO,
+    await resend.emails.send({
+      from: 'The Decade Website <manager@the-decade.co.zw>',
+      to: ['manager@the-decade.co.zw'],
       replyTo: email,
       subject: `New Enquiry: ${service} — from ${name}`,
       html: `
@@ -42,10 +33,9 @@ router.post('/', async (req, res) => {
       `,
     })
 
-    // Auto-reply to the client
-    await transporter.sendMail({
-      from: `"The Decade" <${process.env.SMTP_FROM}>`,
-      to: email,
+    await resend.emails.send({
+      from: 'The Decade <manager@the-decade.co.zw>',
+      to: [email],
       subject: `Thanks for reaching out, ${name}!`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
