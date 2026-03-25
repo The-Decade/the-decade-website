@@ -33,20 +33,30 @@ function Contact() {
     if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }))
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault()
-    const validationErrors = validate(form)
-    if (Object.values(validationErrors).some(Boolean)) {
-      setErrors(validationErrors)
-      return
-    }
-    setSubmitting(true)
-    // We'll wire this to the backend in Step 6
-    await new Promise(r => setTimeout(r, 1000))
-    setSubmitting(false)
+async function handleSubmit(e) {
+  e.preventDefault()
+  const validationErrors = validate(form)
+  if (Object.values(validationErrors).some(Boolean)) {
+    setErrors(validationErrors)
+    return
+  }
+  setSubmitting(true)
+  try {
+    const response = await fetch('https://the-decade-api.onrender.com/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form),
+    })
+    const data = await response.json()
+    if (!response.ok) throw new Error(data.error || 'Something went wrong.')
     setSubmitted(true)
     setForm(initialForm)
+  } catch (err) {
+    setErrors(prev => ({ ...prev, message: err.message }))
+  } finally {
+    setSubmitting(false)
   }
+}
 
   return (
     <section className="section contact-section" id="contact">
