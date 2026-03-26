@@ -1,4 +1,26 @@
 User-agent: *
 Allow: /
 
+# Block any future admin or API routes
+Disallow: /api/
+
 Sitemap: https://the-decade.co.zw/sitemap.xml
+
+# Common bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /

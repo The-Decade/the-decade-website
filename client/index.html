@@ -2,19 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Preload critical assets -->
+<link rel="preload" href="/images/webdev.png" as="image" />
+<link rel="dns-prefetch" href="https://the-decade-api.onrender.com" />
+<link rel="preconnect" href="https://the-decade-api.onrender.com" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary SEO -->
-    <title>The Decade | Marketing & Software Solutions Zimbabwe</title>
-    <meta name="description" content="The Decade is a forward-thinking marketing and software solutions company in Zimbabwe helping businesses grow through graphic design, digital marketing, and web development." />
-    <meta name="keywords" content="web development Zimbabwe, digital marketing Zimbabwe, graphic design Harare, software solutions Zimbabwe, The Decade" />
+    <title>The Decade | Web Design, Digital Marketing & Graphic Design Zimbabwe</title>
+<meta name="description" content="The Decade is Zimbabwe's forward-thinking digital agency offering web development, graphic design, digital marketing and hosting services in Harare. We help startups and businesses grow online." />
+<meta name="keywords" content="web design Zimbabwe, web development Harare, digital marketing Zimbabwe, graphic design Harare, SEO Zimbabwe, social media marketing Zimbabwe, website development Zimbabwe, The Decade Zimbabwe" />
     <meta name="author" content="The Decade Digital Solutions" />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph (for social sharing) -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="The Decade | Marketing & Software Solutions Zimbabwe" />
-    <meta property="og:description" content="We help startups and businesses grow, compete, and thrive in the digital age through bold design, smart marketing, and powerful web solutions." />
+    <meta property="og:title" content="The Decade | Web Design & Digital Marketing Zimbabwe" />
+<meta property="og:description" content="Zimbabwe's forward-thinking digital agency. Web development, graphic design, digital marketing and hosting services in Harare." />
+<meta property="og:locale" content="en_ZW" />
     <meta property="og:url" content="https://the-decade.co.zw" />
     <meta property="og:site_name" content="The Decade" />
 
@@ -39,24 +46,114 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "The Decade",
-  "url": "https://the-decade.co.zw",
-"logo": "https://the-decade.co.zw/favicon.svg",
-  "description": "Forward-thinking marketing and software solutions company in Zimbabwe.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Suite 29, Cecilia Business Center, 6 Chelmsford Road",
-    "addressLocality": "Belgravia, Harare",
-    "addressCountry": "ZW"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+263771684163",
-    "contactType": "customer service",
-    "email": "thedecadedigitalsolutions@gmail.com"
-  },
-  "sameAs": []
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://the-decade.co.zw/#organization",
+      "name": "The Decade",
+      "url": "https://the-decade.co.zw",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://the-decade.co.zw/favicon.svg"
+      },
+      "description": "Forward-thinking marketing and software solutions company in Zimbabwe helping businesses grow through graphic design, digital marketing, and web development.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Suite 29, Cecilia Business Center, 6 Chelmsford Road",
+        "addressLocality": "Belgravia",
+        "addressRegion": "Harare",
+        "addressCountry": "ZW"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+263771684163",
+        "contactType": "customer service",
+        "email": "manager@the-decade.co.zw",
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://www.facebook.com/thedecadezw/",
+        "https://www.linkedin.com/company/the-decadezw",
+        "https://www.tiktok.com/@thedecadezw",
+        "https://www.instagram.com/thedecadezw/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://the-decade.co.zw/#website",
+      "url": "https://the-decade.co.zw",
+      "name": "The Decade",
+      "publisher": {
+        "@id": "https://the-decade.co.zw/#organization"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://the-decade.co.zw/#localbusiness",
+      "name": "The Decade",
+      "image": "https://the-decade.co.zw/favicon.svg",
+      "url": "https://the-decade.co.zw",
+      "telephone": "+263771684163",
+      "email": "manager@the-decade.co.zw",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Suite 29, Cecilia Business Center, 6 Chelmsford Road",
+        "addressLocality": "Belgravia",
+        "addressRegion": "Harare",
+        "addressCountry": "ZW"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-17.8252",
+        "longitude": "31.0335"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digital Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Graphic Design",
+              "description": "Marketing materials, social media graphics, business cards, packaging design and company profiles."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Digital Marketing",
+              "description": "SEO, paid advertising, email campaigns and landing page optimization."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Development",
+              "description": "E-commerce websites, UI/UX integration, website maintenance and speed optimization."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Hosting Services",
+              "description": "Domain registration, secure web hosting, SSL certificates and 24/7 technical support."
+            }
+          }
+        ]
+      }
+    }
+  ]
 }
 </script>
   </head>
