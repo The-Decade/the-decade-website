@@ -19,12 +19,5 @@
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "redirects": [
-    {
-      "source": "/sitemap.xml",
-      "destination": "/sitemap.xml",
-      "permanent": false
-    }
   ]
 }
